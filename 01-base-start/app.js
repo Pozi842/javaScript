@@ -4,6 +4,8 @@ const input2 = document.getElementById('input2')
 const submitBtn = document.getElementById('submit')
 const plusBtn = document.getElementById('plus')
 const minusBtn = document.getElementById('minus')
+const multiplyBtn = document.getElementById('multiply')
+const shareBtn = document.getElementById('share')
 let action = '+' 
 
 plusBtn.onclick = function ()
@@ -14,6 +16,16 @@ plusBtn.onclick = function ()
 minusBtn.onclick = function ()
 {
     action = '-'
+}
+
+multiplyBtn.onclick = function ()
+{
+    action = '*'
+}
+
+shareBtn.onclick = function ()
+{
+    action = '/'
 }
 
 function printResult(result) {
@@ -32,8 +44,14 @@ function computeNumbersWithAction(inp1, inp2, actionSymbol) {
     if (action == '+') {
         return num1 + num2
     }
-    else {
+    else if (action == '-') {
         return num1 - num2
+    }
+    else if (action == '*') {
+        return num1 * num2
+    }
+    else if (action == '/') {
+        return num1 / num2
     }
 } 
 
