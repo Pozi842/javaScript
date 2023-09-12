@@ -35,7 +35,7 @@ function printResult(result) {
         else {
         resultElement.style.color = 'green'
         }
-        resultElement.textContent = result
+        resultElement.insertAdjacentHTML('beforeend', result)
 }
 
 function computeNumbersWithAction(inp1, inp2, actionSymbol) {
