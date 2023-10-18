@@ -35,6 +35,7 @@ const notes = [
 ]
 
 function render(){
+    
     listElement.innerHTML = ''
     if (notes.length === 0) {
         listElement.innerHTML = '<p>Нет елементов</p>'
@@ -77,11 +78,22 @@ listElement.onclick = function (event) {
     }
 }
 
+$('label').click(function(event){
+    $('#path').click();
+    event.preventDefault();
+});
+// $('#path').on('change',function(e){
+// var dir=$(this).val().split('\')[0];
+// $('#directory').text(dir);
+// });
+
 function getNoteTemplate(note, index){
     return `
             <li
             class="list-group-item d-flex justify-content-between align-items-center"
             >
+            <img src="cute.jpg"width="1000" height="1000" >
+    </img>
             <span class="${note.completed ? 'text-decoration-line-through' : ''}">${note.title}</span>
             <span>
             <span class="btn btn-small btn-${note.completed ? 'warning' : 'success' }" data-index="${index}" data-type="toggle">&check;</span>
